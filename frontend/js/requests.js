@@ -31,9 +31,25 @@ const removeTask = async (id)=>{
     })
 }
 
+const updateTask = async (id, status, title)=>{
+    const task = {
+        "title": title,
+        "description": status
+    }
+    fetch('http://localhost:3000/tasks/'+id, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(task)
+    })
+}
+
 export {
     fetchAllTasks,
     createTask,
     removeTask,
-    fetchTask
+    fetchTask,
+    updateTask,
+ 
 } 
