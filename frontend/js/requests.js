@@ -4,6 +4,12 @@ const fetchAllTasks = async ()=>{
     return tasks
 }
 
+const fetchTask = async (id)=>{
+    const response = await fetch('http://localhost:3000/tasks/'+id)
+    const task = await response.json()
+    return task
+}
+
 const createTask = async (task)=>{
     const data  = {
         "title": task
@@ -15,15 +21,19 @@ const createTask = async (task)=>{
         },
         body: JSON.stringify(data)
     })
-    const tasks = await response.json()
+    const [taskAdded, buffer] = await response.json()
+    return taskAdded
 }
 
 const removeTask = async (id)=>{
-
+    fetch('http://localhost:3000/tasks/'+id,{
+        method: "DELETE"
+    })
 }
 
 export {
     fetchAllTasks,
     createTask,
-    removeTask
+    removeTask,
+    fetchTask
 } 

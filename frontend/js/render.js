@@ -1,9 +1,18 @@
-import {fetchAllTasks} from "./requests.js"
+import {
+    fetchAllTasks,
+} from "./requests.js"
 import setEventListeners from "./listener.js"
 
 const renderAllTasks = async ()=>{
     const tasks = await fetchAllTasks()
     tasks.forEach((el)=>{
+        renderNewTask(el)
+    })
+    setEventListeners()
+}
+
+const renderNewTask = async (el)=>{
+    // Get Task - render the new task
         const task = document.createElement("tr")
         task.setAttribute("class", "task")
         const td0 = document.createElement("td")
@@ -31,17 +40,15 @@ const renderAllTasks = async ()=>{
         task.appendChild(td2)
         task.appendChild(td3)
         document.getElementById('tbody').appendChild(task)
-    })
-    setEventListeners()
 }
 
-const renderNewTask = ()=>{
-    // Get Task - render the new task
-}
-
-const removeTask = ()=>{
-    // Remove the task from db, then remove it from html
+const openModal = ()=>{
+    
 }
 
 renderAllTasks()
+
+export {
+    renderNewTask,
+}
 

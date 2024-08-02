@@ -14,8 +14,12 @@ const createTask = async (task) =>{
     const title = task.title
     const description = "Ativo"
     const timestamp = new Date().getTime()
-    const date = new Date(timestamp)
-    const novaTask = await connection.execute("INSERT INTO Tasks (title, description, date) VALUES (?,?,?)", [title, description, date])
+    const year = new Date(timestamp).getFullYear()
+    const month = new Date(timestamp).getMonth() + 1
+    const day = new Date(timestamp).getDate()
+    const date = day + "/"+ month + "/"+ year
+    await connection.execute("INSERT INTO Tasks (title, description, date) VALUES (?,?,?)", [title, description, date])
+    const novaTask = await connection.execute("SELECT * FROM Tasks WHERE title = ?", [title])
     return novaTask
 }
 
