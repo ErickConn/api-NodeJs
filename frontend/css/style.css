@@ -1,0 +1,102 @@
+*{
+    border: none;
+    box-sizing: border-box;
+    margin: none;
+    padding: 0;
+}
+
+body{
+    background-color: blue;
+}
+
+main{
+    display: flex;
+    width: 95%;
+    margin: auto;
+    flex-direction: column;
+    background-color: white;
+    height: 80vh;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px 8px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+thead{
+    width: 100%;
+    background-color: blue;
+    color: white;
+    text-decoration: bold;
+    font-size: 18px;
+}
+
+tbody{
+    width: 100%;
+    font-size: 15px;
+}
+
+td,th{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.input{
+    display: flex;
+    height: max-content;
+    margin-bottom: 20px;
+}
+
+.status{
+    background-color: #ccc;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#task{
+    width: 85%;
+    padding: 5px;
+    border: 1px solid black;
+    font-size: 20px;
+}
+
+#btn-add{
+    display: flex;
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 5px;
+    width: 8%;
+    min-width: 40px;
+    background-color: blue;
+    color: white;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    justify-content: center;
+    right: 0px;
+    cursor: pointer;
+}
+
+.edit{
+    background-color: greenyellow;
+    width: 20%;
+    padding: 5px;
+    border-radius: 5px;
+    height: 20px;
+    cursor: pointer;
+    border: 2px  solid #ccc;
+    margin: 2px;
+}
+
+.remove{
+    background-color: red;
+    width: 20%;
+    padding: 5px;
+    border-radius: 5px;
+    height: 20px;
+    cursor: pointer;
+    border: 2px  solid #ccc;
+    margin: 2px;
+}
