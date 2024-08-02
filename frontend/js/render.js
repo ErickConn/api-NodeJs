@@ -18,6 +18,7 @@ const renderNewTask = async (el)=>{
     task.setAttribute("class", "task")
     const td0 = document.createElement("td")
     td0.innerHTML = el.title
+    td0.setAttribute("class", "task-title")
     const td1 = document.createElement("td")
     td1.innerHTML = el.date
     const td2 = document.createElement("td")

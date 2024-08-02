@@ -22,6 +22,7 @@ const setEventListeners = (i)=>{
         // Change the modal values to the task ones
         const btnSave = document.getElementById('save')
         btnSave.addEventListener('click', async ()=>{
+            const newBtnSave = btnSave.cloneNode(true)
             // Call the API to update the task
             const taskName = document.getElementById('taskName').value
             const id = event.target.getAttribute('id')
@@ -30,7 +31,10 @@ const setEventListeners = (i)=>{
             // Close the modal
             $('#exampleModal').modal('hide')
             // Refresh the task on DOM
+            document.getElementById('taskName').value = ''
             event.target.parentElement.parentElement.firstChild.innerHTML = taskName
+            // Reset the old event listener
+            btnSave.parentElement.replaceChild(newBtnSave,btnSave)
         })
         // Save changes button - event listener
     })

@@ -21,6 +21,12 @@ const createTask = async (task)=>{
         },
         body: JSON.stringify(data)
     })
+    if (response.status === 500){
+        const inputTask = document.getElementById('task')
+        inputTask.value = ''
+        alert("Error! Length of task is way too big!")
+        return
+    }
     const [taskAdded, buffer] = await response.json()
     return taskAdded
 }

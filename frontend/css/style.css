@@ -30,12 +30,18 @@ thead{
     background-color: blue;
     color: white;
     text-decoration: bold;
+    text-align: center;
     font-size: 18px;
 }
 
 tbody{
     width: 100%;
     font-size: 15px;
+}
+
+.task-title{
+    text-align: left;
+    word-break: break-all;
 }
 
 td,th{

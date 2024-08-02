@@ -2,6 +2,9 @@ const validateTitle = (request, response, next) =>{
     if (! request.body.title){
         return response.status(400).json({ error: 'Title is required' })
     }
+    if (request.body.title.length > 255){
+        return response.status(500).json({ error: 'Invalid title' })
+    }
     next()
 }
 
